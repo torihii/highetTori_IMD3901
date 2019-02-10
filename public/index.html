@@ -17,6 +17,7 @@
 
                     <!-- all assets that can be cached by browser -->
                     <img crossorigin="anonymous" id="skymap" src="/assets/textures/CloudySky.jpg">
+                    <img crossorigin="anonymous" id="chestmap" src="/assets/textures/Chest.mtl">
                     <img crossorigin="anonymous" id="cowmap" src="/assets/textures/HylianShield_BaseColor.png">
                     <a-asset-item crossorigin="anonymous" id="Helmet-gltf" src="/assets/models/Chest.obj">
                     <a-asset-item crossorigin="anonymous" id="Cow-obj" src="/assets/models/HylianShield.obj">
@@ -52,7 +53,7 @@
                 <a-entity light="type: ambient; intensity: 1.0; color:#bbb;"></a-entity>
             
                 <!-- our helmet model from : https://github.com/KhronosGroup/glTF-Sample-Models -->
-                <a-gltf-model create-cow-component src="#Helmet-gltf" position="-2 0.6 -4" scale="1 1 1" shadow="cast:true; receive:true;" spherical-env-map="src:#skymap;"></a-gltf-model>
+                <a-obj-model create-cow-component src="#Helmet-gltf" position="0 0 0" scale=".01 .01 .01" shadow="cast:true; receive:true;" spherical-env-map="src:#skymap;"></a-obj-model>
                     
                 <!-- plane so we can see shadows -->
                 <a-entity id="plane" geometry="primitive:plane; width:4; height:4;" position="0 0 -4" rotation="-90 0 0" 
@@ -68,10 +69,10 @@
             document.addEventListener('keyup', function(e){
                 console.log(e.keyCode);
                 if(e.keyCode == 221){
-                    document.getElementById('bigcow').setAttribute('scale', {x:5, y:5, z:5});
+                    document.getElementById('bigcow').setAttribute('scale', {x:.1, y:.1, z:.1});
                 }
                 if(e.keyCode == 219){
-                    document.getElementById('bigcow').setAttribute('scale', {x:.5, y:.5, z:.5});
+                    document.getElementById('bigcow').setAttribute('scale', {x:.3, y:.3, z:.3});
                 }
             });
         </script>
