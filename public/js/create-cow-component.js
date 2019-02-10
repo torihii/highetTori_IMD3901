@@ -22,9 +22,12 @@ AFRAME.registerComponent('create-cow-component', {
         //see here: https://aframe.io/docs/0.8.0/components/pool.html
         let cowElem = document.createElement('a-entity');
         cowElem.setAttribute('obj-model', {obj:'/assets/models/Cow.obj'});
+        cowElem.setAttribute('id', 'bigcow');
         cowElem.setAttribute('material', {src:'/assets/textures/Cow.png'});
         cowElem.setAttribute('remove-component', {}); 
         cowElem.setAttribute('position', {x:2, y:0, z:-4});
+        
+      
         
         let scene = document.querySelector('a-scene');
         scene.appendChild(cowElem);
